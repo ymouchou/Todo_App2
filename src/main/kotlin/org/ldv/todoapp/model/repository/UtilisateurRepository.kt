@@ -24,4 +24,6 @@ interface UtilisateurRepository : JpaRepository<Utilisateur, Long> {
         ORDER BY u.nom, u.prenom
     """)
     fun findAllAvecRole(): List<Utilisateur>
+
+    fun findByReferenceDemo(referenceDemo: String): Utilisateur?
 }

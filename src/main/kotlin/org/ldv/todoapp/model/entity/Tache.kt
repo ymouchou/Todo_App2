@@ -29,5 +29,8 @@ class Tache(
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn( name = "fkid_utilisateur", referencedColumnName = "id_utilisateur", nullable = false)
-    open var utilisateur: Utilisateur? = null
+    open var utilisateur: Utilisateur? = null,
+
+    @Column(name = "reference_demo", unique = true, length = 50)
+    open var referenceDemo: String? = null
 )

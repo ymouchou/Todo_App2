@@ -17,4 +17,11 @@ interface TacheRepository : JpaRepository<Tache, Long> {
         ORDER BY t.dateCreation DESC
     """)
     fun findAllAvecUtilisateur(): List<Tache>
+
+    fun findByReferenceDemo(referenceDemo: String): Tache?
+
+    fun findFirstByUtilisateur_IdUtilisateurAndTitreAndReferenceDemoIsNullOrderByIdTacheAsc(
+        idUtilisateur: Long,
+        titre: String
+    ): Tache?
 }
